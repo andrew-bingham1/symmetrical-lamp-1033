@@ -88,13 +88,4 @@ RSpec.describe 'Customer Show Page' do
       end
     end
   end
-
 end
-
-# Story 2
-
-# When I fill in a field with the id of an existing item,
-# And I click submit,
-# Then I am redirected back to the customer's show page, 
-# And I see the item now listed under this customer's items.
-# (You do not have to test for a sad path, for example if the ID submitted is not an existing item)
