@@ -8,3 +8,13 @@
     </ul>
   </section>
 <% end %>
+
+<section id="NewItem">
+<h2>New Item</h2>
+  <%= form_with url: '/customer_item', method: :post, local: true do |form| %>
+  <%= form.hidden_field :customer, value: @customer.id%>  
+  <%= form.label :item, "Item ID:" %><br>
+  <%= form.text_field :item %> <br><br>
+  <%= form.submit "Submit"%>
+  <% end %>
+  </section>
