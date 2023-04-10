@@ -34,13 +34,16 @@ RSpec.describe Item, type: :model do
       CustomerItem.create!(customer: @customer_3, item: @item_1)
 
       expect(@item_1.num_of_customers).to eq(3)
-      
+
 
       expect(@item_2.num_of_customers).to eq(2)
 
       CustomerItem.create!(customer: @customer_3, item: @item_2)
 
       expect(@item_2.num_of_customers).to eq(3)
+
+      
+      expect(@item_4.num_of_customers).to eq(0)
     end
   end
 end
