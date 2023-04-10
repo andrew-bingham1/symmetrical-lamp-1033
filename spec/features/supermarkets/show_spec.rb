@@ -26,6 +26,9 @@ RSpec.describe 'Supermarket Show Page' do
       visit "/supermarkets/#{@supermarket_1.id}"
     end
 
+    it 'Then I see a unique list of all customers that have shopped at the supermarket.' do
+      
+    end
   end
 end
 
