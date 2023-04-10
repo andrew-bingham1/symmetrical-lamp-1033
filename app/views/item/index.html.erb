@@ -1,1 +1,11 @@
 <h1> Items Index Page </h1>
+<% @items.each do |item| %>
+<section id="<%= item.name %>">  
+    <ul>
+      <li>Item Name: <%= item.name %></li>
+      <li>Price: <%= item.price %> dollar(s)</li>
+      <li>Supermarket: <%= item.supermarket.name %></li>
+      <li>Number of Customers: <%=item.num_of_customers %></li>
+    </ul>
+  </section>
+<% end %>
