@@ -22,19 +22,63 @@ RSpec.describe 'Items Index Page' do
   end
 
   describe "User Story 3" do 
-    it 'Item Index Show Page exists' do
+    it 'Item Index Page exists' do
       visit "/items"
     
+      expect(current_path).to eq("/items")
+    end
+
+    it "Then I see a list of all items including the item's name, price, and the name of the supermarket that it belongs to" do
+      visit "/items"
+
+      within("#Banana") do
+        expect(page).to have_content("Item Name: Banana")
+        expect(page).to have_content("Price: 1 dollar(s)")
+        expect(page).to have_content("Supermarket: King Soopers")
+      end
+
+      within("#Apple") do
+        expect(page).to have_content("Item Name: Apple")
+        expect(page).to have_content("Price: 2 dollar(s)")
+        expect(page).to have_content("Supermarket: King Soopers")
+      end
+
+      within("#Avocado") do
+        expect(page).to have_content("Item Name: Avocado")
+        expect(page).to have_content("Price: 3 dollar(s)")
+        expect(page).to have_content("Supermarket: King Soopers")
+      end
+
+      within("#Bagels") do
+        expect(page).to have_content("Item Name: Bagels")
+        expect(page).to have_content("Price: 5 dollar(s)")
+        expect(page).to have_content("Supermarket: King Soopers")
+      end
+    end
+
+    it 'and the count of customers that bought that item.' do
+      visit "/items"
+
+      within("#Banana") do
+        expect(page).to have_content("Number of Customers: 2")
+      end
+
+      within("#Apple") do
+        expect(page).to have_content("Number of Customers: 2")
+      end
+
+      within("#Avocado") do
+        expect(page).to have_content("Number of Customers: 2")
+      end
+
+      within("#Bagels") do
+        expect(page).to have_content("Number of Customers: 0")
+      end
     end
   end
 
 end
 
 
-#   Story 3
 
-# As a visitor,
-# When I visit the items index page,
-# Then I see a list of all items
-# including the item's name, price, and the name of the supermarket that it belongs to
-# and the count of customers that bought that item.
+# 
